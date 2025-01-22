@@ -2,8 +2,8 @@
 
 一个现代化的意见反馈管理系统，支持用户反馈提交和跟踪功能，基于MIT协议开源。
 
-![系统截图](https://via.placeholder.com/800x400.png?text=系统界面预览)
-
+![系统截图](https://www.helloimg.com/i/2025/01/22/67908c23d974b.png)
+![系统截图](https://www.helloimg.com/i/2025/01/22/67908c23dd7fb.png)
 ## ✨ 核心功能
 
 ### 💡 用户反馈
@@ -45,54 +45,26 @@
 - Git（可选）
 
 ### 🛠️ 安装步骤
+1.下载文件
+2.放置服务器
+3.访问安装
+4.填写数据库信息
+5.点击安装
+6.完成后点击返回首页
 
-```bash
-# 克隆仓库
-git clone https://github.com/yourname/feedback-system.git
-cd feedback-system
-
-# 创建数据库（MySQL）
-mysql -u root -p -e "CREATE DATABASE feedback_system CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
-
-# 导入表结构
-mysql -u root -p feedback_system < database/schema.sql
-
-# 配置环境
-cp config.example.php config.php
-nano config.php  # 编辑数据库配置
+## 🔧 项目结构
 ```
-
-### 🔧 配置说明
-
-`config.php` 配置示例：
-```php
-// 数据库配置
-define('DB_HOST', 'localhost');
-define('DB_USER', 'feedback_user');
-define('DB_PASS', 'secure_password');
-define('DB_NAME', 'feedback_system');
-
-// 邮件配置（可选）
-define('SMTP_HOST', 'smtp.example.com');
-define('SMTP_PORT', 587);
-define('SMTP_USER', 'user@example.com');
-define('SMTP_PASS', 'email_password');
-```
-
-## 📖 开发指南
-
-### 目录结构
-```
-.
-├── public/            # 公开访问目录
-│   ├── index.php      # 入口文件
-│   └── assets/        # 静态资源
-├── admin/             # 管理后台
-├── includes/          # 公共函数库
-│   ├── database.php   # 数据库操作
-│   └── security.php   # 安全相关
+project/
+├── index.php          # 主程序文件
 ├── config.php         # 配置文件
-└── LICENSE            # 开源协议
+├── check_install.php  # 安装检查
+├── install            # 安装文件
+├── admin/             # 后台管理目录
+│   ├── index.php      # 后台管理主程序
+│   ├── login.php      # 后台登录页面
+│   ├── logout.php     # 后台退出登录
+│   └── change_password.php     # 修改密码
+└── README.md          # 说明文档
 ```
 
 ### 开发建议
@@ -115,30 +87,10 @@ define('SMTP_PASS', 'email_password');
 3. 提交变更（`git commit -m '添加精彩功能'`）
 4. 推送分支（`git push origin feature/新功能`）
 5. 发起Pull Request
-
-## ❓ 常见问题
-
-### 如何开启调试模式？
-在config.php中添加：
-```php
-define('DEBUG_MODE', true);
-```
-
-### 如何配置邮件通知？
-1. 在配置文件中填写SMTP信息
-2. 确保服务器开放对应端口
-3. 测试邮件发送功能（访问/test-mail路由）
-
-### 如何升级系统？
-```bash
-git pull origin main
-mysql -u root -p feedback_system < database/updates/latest.sql
-```
-
 ---
 
 > 「倾听用户声音，驱动产品进化」  
 > —— 轻风反馈系统开发团队
 
-📮 联系方式：support@feedback-system.com  
-📢 社区支持：[加入Discussions](https://github.com/yourname/feedback-system/discussions)
+📮 联系方式：qingfeng@qingfengnb.cn  
+📢 社区支持：[支持页面](https://support.qingfengnb.cn/)
